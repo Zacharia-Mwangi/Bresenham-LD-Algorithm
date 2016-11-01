@@ -4,6 +4,7 @@ through integer addition and subtraction
 */
 import java.applet.Applet;
 import java.awt.*;
+import java.util.*;
 
 
 
@@ -36,7 +37,19 @@ public class Bresenham extends Applet {
 
 
     public void paint(Graphics g) {
-       x0= 0; y0= 0; xn=-4;yn= 2 ;
+        Scanner reader = new Scanner(System.in);
+
+        // get first points (x0,y0) and last points (xn,yn)
+        System.out.println("Input Point x0: " + '\n');
+        x0 = reader.nextInt();
+        System.out.println("Input Point y0: " + '\n');
+        y0 = reader.nextInt();
+        System.out.println("Input Point xn: " + '\n');
+        xn = reader.nextInt();
+        System.out.println("Input Point yn: " + '\n');
+        yn = reader.nextInt();
+
+        // x0= 0; y0= 0; xn=8;yn= -4;
         g.fillOval(x0, y0, 5, 5);
         g.fillOval(xn, yn, 5, 5);
         dx = xn - x0;
